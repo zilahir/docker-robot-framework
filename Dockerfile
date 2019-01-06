@@ -1,6 +1,6 @@
 FROM fedora:29
 
-MAINTAINER Richard Zilahi zilahi@gmail.com
+MAINTAINER Richard Zilahi <zilahi@gmail.com>
 LABEL description Robot Framework in Docker.
 
 # Setup volumes for input and output
@@ -27,6 +27,7 @@ ENV REQUESTS_VERSION 0.4.7
 ENV ROBOT_FRAMEWORK_VERSION 3.0.4
 ENV SELENIUM_LIBRARY_VERSION 3.3.1
 ENV XVFB_VERSION 1.20.*
+ENV SELENIUM2_LIBRARY_VERSION 3.0.0
 
 # Install system dependencies
 RUN dnf upgrade -y \
@@ -48,7 +49,7 @@ RUN pip install \
   robotframework-pabot==$PABOT_VERSION \
   robotframework-requests==$REQUESTS_VERSION \
   robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION
-  robotframework-selenium2library
+  robotframework-selenium2library==$SELENIUM2_LIBRARY_VERSION
   
 
 # Download Gecko drivers directly from the GitHub repository
@@ -72,3 +73,4 @@ ENV PATH=/opt/robotframework/bin:/opt/robotframework/drivers:$PATH
 
 # Execute all robot tests
 CMD ["run-tests-in-virtual-screen.sh"]
+
