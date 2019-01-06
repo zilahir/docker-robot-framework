@@ -1,6 +1,6 @@
 FROM fedora:29
 
-MAINTAINER Paul Podgorsek <ppodgorsek@users.noreply.github.com>
+MAINTAINER Richard Zilahi zilahi@gmail.com
 LABEL description Robot Framework in Docker.
 
 # Setup volumes for input and output
@@ -48,6 +48,8 @@ RUN pip install \
   robotframework-pabot==$PABOT_VERSION \
   robotframework-requests==$REQUESTS_VERSION \
   robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION
+  robotframework-selenium2library
+  
 
 # Download Gecko drivers directly from the GitHub repository
 RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/$GECKO_DRIVER_VERSION/geckodriver-$GECKO_DRIVER_VERSION-linux64.tar.gz" \
