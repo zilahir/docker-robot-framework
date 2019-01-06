@@ -48,7 +48,7 @@ RUN pip install \
   robotframework-faker==$FAKER_VERSION \
   robotframework-pabot==$PABOT_VERSION \
   robotframework-requests==$REQUESTS_VERSION \
-  robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION
+  robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION \
   robotframework-selenium2library==$SELENIUM2_LIBRARY_VERSION
   
 
